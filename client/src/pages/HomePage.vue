@@ -3,35 +3,66 @@
 </script>
 
 <template>
-  <div class="home flex-grow-1 d-flex flex-column align-items-center justify-content-center">
-    <div class="home-card p-5 card align-items-center shadow rounded elevation-3">
-      <img src="https://bcw.blob.core.windows.net/public/img/8600856373152463" alt="CodeWorks Logo"
-        class="rounded-circle">
-      <h1 class="my-5 bg-dark text-white p-3 rounded text-center">
-        Vue 3 Starter
-      </h1>
+  <section class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-8 info-container p-2">
+        <div class="d-flex justify-content-between">
+          <img class="image ms-4" src="../assets/img/unnamed.jpg" alt="">
+          <div class="text-center w-75">
+            <div class="d-flex justify-content-center ">
+              <h2 class="fst-italic title">Maxwell Petersen</h2>
+            </div>
+            <div class="d-flex">
+              <div class="d-flex flex-column align-items-center mt-2 me-2">
+                <h4 class="title">Career</h4>
+                <div class="d-flex align-items-center career-button-section">
+                  <h6>-Software Engineer⭐</h6>
+                  <button class="button-style ms-1">Info</button>
+                </div>
+                <h4 class="mt-2 title">Former Careers</h4>
+                <h6>-Technical Manager✅</h6>
+                <h6>-Chef✅</h6>
+                <h6>-Event Caterer✅</h6>
+              </div>
+              <div class="career-info"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <style scoped lang="scss">
-.home {
-  display: grid;
-  height: 80vh;
-  place-content: center;
-  text-align: center;
-  user-select: none;
+.info-container{
+  background-color: #4F4A45;
+  color: white;
+  outline: solid 2px #ED7D31;
+}
+.image{
+  max-height: 280px;
+  max-width: 200px;
+}
 
-  .home-card {
-    width: clamp(500px, 50vw, 100%);
+.title{
+  border-bottom: solid 1px #ED7D31;
+}
 
-    >img {
-      height: 200px;
-      max-width: 200px;
-      width: 100%;
-      object-fit: contain;
-      object-position: center;
-    }
-  }
+.button-style{
+  all: unset;
+  outline: solid 1px #ED7D31;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 6px;
+  padding-right: 6px;
+  border-radius: 5px;
+}
+
+.career-info{
+
+}
+
+.career-button-section{
+  
 }
 </style>
