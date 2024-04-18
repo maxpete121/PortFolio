@@ -39,29 +39,58 @@
                   <button class="button-style">Info</button>
                 </div>
               </div>
-              <div class="skills-info">
+              <div class="skills-info me-4">
                 <h4 class="title">My Skills</h4>
-                <div class="">
-                  <h5>Programming</h5>
-                  <div class="skill-box">
-                    <h6>Javascript</h6>
+                <div class="d-flex">
+                  <div class="d-flex flex-column align-items-center">
+                    <h5 class="fst-italic">Languages</h5>
+                    <div class="skill-box">
+                      <h6>Javascript</h6>
+                    </div>
+                    <div class="skill-box">
+                      <h6>HTML</h6>
+                    </div>
+                    <div class="skill-box">
+                      <h6>CSS</h6>
+                    </div>
+                    <div class="skill-box">
+                      <h6>C Sharp</h6>
+                    </div>
+                    <div class="skill-box">
+                      <h6>MYSQL</h6>
+                    </div>
                   </div>
-                  <div class="skill-box">
-                    <h6>HTML</h6>
+                  <div class="d-flex flex-column align-items-center ms-3">
+                    <h5 class="fst-italic">Other</h5>
+                    <div class="skill-box">
+                      <h6>Figma</h6>
+                    </div>
+                    <div class="skill-box">
+                      <h6>MongoDB</h6>
+                    </div>
+                    <div class="skill-box">
+                      <h6>Web APIs</h6>
+                    </div>
+                    <div class="skill-box">
+                      <h6>AWS</h6>
+                    </div>
+                    <div class="skill-box">
+                      <h6>.NET CORE</h6>
+                    </div>
                   </div>
-                  <div class="skill-box">
-                    <h6>CSS</h6>
-                  </div>
-                  <div class="skill-box">
-                    <h6>C Sharp</h6>
-                  </div>
-                  <div class="skill-box">
-                    <h6>.NET CORE</h6>
-                  </div>
+                </div>
+              </div>
+              <div class="hobbies-view">
+                <h3 class="title">Hobbies</h3>
+                <div class="d-flex">
+                  <div></div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+        <div class="">
+          <h3>My Projects</h3>
         </div>
       </div>
     </div>
@@ -116,6 +145,8 @@
   background-color: #ED7D31;
   border-radius: 10px;
   width: 100px;
+  height: 20px;
+  margin-top: 4px;
 }
 
 .career-button-section{
