@@ -10,10 +10,10 @@
           <img class="image ms-4" src="../assets/img/unnamed.jpg" alt="">
           <div class="text-center w-75">
             <div class="d-flex justify-content-center ">
-              <h2 class="fst-italic title">Maxwell Petersen</h2>
+              <h2 class="fst-italic title me-4">Maxwell Petersen</h2>
             </div>
-            <div class="d-flex justify-content-between">
-              <div class="d-flex flex-column align-items-center mt-2 me-2">
+            <div class="d-flex justify-content-between mt-2">
+              <div class="d-flex flex-column align-items-center mt-3 me-2">
                 <h4 class="title-career">My Career</h4>
                 <div class="d-flex align-items-center justify-content-between career-button-section">
                   <h6>-Software Engineer⭐</h6>
@@ -39,7 +39,7 @@
                   <button class="button-style">Info</button>
                 </div>
               </div>
-              <div class="skills-info me-4">
+              <div class="skills-info me-3">
                 <h4 class="title">My Skills</h4>
                 <div class="d-flex">
                   <div class="d-flex flex-column align-items-center">
@@ -80,17 +80,31 @@
                   </div>
                 </div>
               </div>
-              <div class="hobbies-view">
+              <div class="hobbies-view me-4">
                 <h3 class="title">Hobbies</h3>
                 <div class="d-flex">
-                  <div></div>
+                  <div class="text-center me-2">
+                    <h5 class="fst-italic">Game Development</h5>
+                    <h6>-Action RPG</h6>
+                    <h6>-Action RTS</h6>
+                    <h6>-ClickTeam Fusion</h6>
+                    <h6>-Unity Engine</h6>
+                  </div>
+                  <div>
+                    <h5 class="fst-italic">Other</h5>
+                    <h6>-Gaming</h6>
+                    <h6>-Hiking</h6>
+                    <h6>-Family time</h6>
+                    <h6>-Cooking</h6>
+                    <h6>-Coding</h6>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="">
-          <h3>My Projects</h3>
+        <div class="text-center mt-3">
+          <h3 class="title d-inline-block">My Projects</h3>
         </div>
       </div>
     </div>
