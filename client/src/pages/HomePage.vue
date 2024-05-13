@@ -1,116 +1,63 @@
-<script setup>
 
-</script>
 
 <template>
   <section class="container-fluid">
     <div class="row justify-content-center">
       <div class="col-8 info-container p-2">
         <div class="d-flex justify-content-between">
-          <img class="image ms-4" src="../assets/img/unnamed.jpg" alt="">
-          <div class="text-center w-75">
-            <div class="d-flex justify-content-center ">
-              <h2 class="fst-italic title me-4">Maxwell Petersen</h2>
+          <div class="d-flex flex-column align-items-center">
+            <div class="d-inline-block title-box ps-2 pe-2">
+              <h2 class="fst-italic">Maxwell Petersen</h2>
             </div>
-            <div class="d-flex justify-content-between mt-2">
-              <div class="d-flex flex-column align-items-center mt-3 me-2">
-                <h4 class="title-career">My Career</h4>
-                <div class="d-flex align-items-center justify-content-between career-button-section">
-                  <h6>-Software Engineer⭐</h6>
-                  <button class="button-style">Info</button>
-                </div>
-                <h4 class="mt-2 title-career">Former Careers</h4>
-                <div class="d-flex align-items-center justify-content-between career-button-section">
-                  <div class="w-75 text-center">
-                    <h6>-Technical Manager✅</h6>
-                  </div>
-                  <button class="button-style">Info</button>
-                </div>
-                <div class="d-flex align-items-center justify-content-between career-button-section mt-2">
-                  <div class="w-75 text-center">
-                    <h6>-Event Caterer✅</h6>
-                  </div>
-                  <button class="button-style">Info</button>
-                </div>
-                <div class="d-flex align-items-center justify-content-between career-button-section mt-2">
-                  <div class="w-75 text-center">
-                    <h6>-Chef✅</h6>
-                  </div>
-                  <button class="button-style">Info</button>
-                </div>
+            <img class="image mt-3" src="../assets/img/unnamed.jpg" alt="">
+          </div>
+          <div class="d-flex flex-column">
+            <h3 class="title">My Projects</h3>
+            <div>
+              <div class="d-flex">
+                <button @click="changeProjectInfo(0)" class="filter-btn">PcPals</button>
+                <button @click="changeProjectInfo(1)" class="filter-btn">KeeprCo</button>
+                <button @click="changeProjectInfo(2)" class="filter-btn">All Spice</button>
               </div>
-              <div class="skills-info me-3">
-                <h4 class="title">My Skills</h4>
-                <div class="d-flex">
-                  <div class="d-flex flex-column align-items-center">
-                    <h5 class="fst-italic">Languages</h5>
-                    <div class="skill-box">
-                      <h6>Javascript</h6>
-                    </div>
-                    <div class="skill-box">
-                      <h6>HTML</h6>
-                    </div>
-                    <div class="skill-box">
-                      <h6>CSS</h6>
-                    </div>
-                    <div class="skill-box">
-                      <h6>C Sharp</h6>
-                    </div>
-                    <div class="skill-box">
-                      <h6>MYSQL</h6>
-                    </div>
-                  </div>
-                  <div class="d-flex flex-column align-items-center ms-3">
-                    <h5 class="fst-italic">Other</h5>
-                    <div class="skill-box">
-                      <h6>Figma</h6>
-                    </div>
-                    <div class="skill-box">
-                      <h6>MongoDB</h6>
-                    </div>
-                    <div class="skill-box">
-                      <h6>Web APIs</h6>
-                    </div>
-                    <div class="skill-box">
-                      <h6>AWS</h6>
-                    </div>
-                    <div class="skill-box">
-                      <h6>.NET CORE</h6>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="hobbies-view me-4">
-                <h3 class="title">Hobbies</h3>
-                <div class="d-flex">
-                  <div class="text-center me-2">
-                    <h5 class="fst-italic">Game Development</h5>
-                    <h6>-Action RPG</h6>
-                    <h6>-Action RTS</h6>
-                    <h6>-ClickTeam Fusion</h6>
-                    <h6>-Unity Engine</h6>
-                  </div>
-                  <div>
-                    <h5 class="fst-italic">Other</h5>
-                    <h6>-Gaming</h6>
-                    <h6>-Hiking</h6>
-                    <h6>-Family time</h6>
-                    <h6>-Cooking</h6>
-                    <h6>-Coding</h6>
-                  </div>
-                </div>
+              <div class="project-info pt-2 ps-1 pe-1">
+                <h4>{{ projectData.name }}</h4>
               </div>
             </div>
           </div>
-        </div>
-        <div class="text-center mt-3">
-          <h3 class="title d-inline-block">My Projects</h3>
         </div>
       </div>
     </div>
   </section>
 </template>
+<script setup>
+import { computed, onMounted, ref } from 'vue';
+import { loadState, saveState } from '../utils/Store.js';
+import { AppState } from '../AppState';
+const theme = ref(loadState('theme') || 'light')
 
+onMounted(() => {
+  document.documentElement.setAttribute('data-bs-theme', theme.value)
+  changeProjectInfo()
+})
+
+const projectData = ref()
+projectData.value = {}
+
+function toggleTheme() {
+  theme.value = theme.value == 'light' ? 'dark' : 'light'
+  document.documentElement.setAttribute('data-bs-theme', theme.value)
+  saveState('theme', theme.value)
+}
+
+async function changeProjectInfo(index){
+  if(index == null){
+    index = 0
+  }
+  let data = AppState.projectInfo[index]
+  projectData.value = data
+}
+
+</script>
 <style scoped lang="scss">
 .info-container{
   background-color: #4F4A45;
@@ -118,8 +65,8 @@
   outline: solid 2px #ED7D31;
 }
 .image{
-  max-height: 280px;
-  max-width: 200px;
+  max-height: 400px;
+  max-width: 300px;
 }
 
 .title{
@@ -131,25 +78,47 @@
   margin-right: 53px;
 }
 
-.button-style{
-  all: unset;
-  outline: solid 1px #ED7D31;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 6px;
-  padding-right: 6px;
-  border-radius: 5px;
+.title-box{
+  background-color: rgba(255, 255, 255, 0.808);
+  color: black;
+  outline: solid 2px #ED7D31;
 }
 
-.button-style:hover{
+.project-info{
+  border-left: solid 1px #ED7D31;
+  border-right: solid 1px #ED7D31;
+  border-bottom: solid 1px #ED7D31;
+  background-color: #635d56;
+}
+
+.filter-btn{
   all: unset;
   outline: solid 1px #ED7D31;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 6px;
-  padding-right: 6px;
-  border-radius: 5px;
-  transform: scale(1.05);
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.filter-btn:hover{
+  all: unset;
+  outline: solid 1px #ED7D31;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #635d56;
+}
+
+.filter-btn:focus{
+  all: unset;
+  border-top: solid 1px #ED7D31;
+  border-right: solid 1px #ED7D31;
+  border-left: solid 1px #ED7D31;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 20px;
+  padding-right: 20px;
   background-color: #635d56;
 }
 
