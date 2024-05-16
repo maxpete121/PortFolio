@@ -12,15 +12,25 @@
             <img class="image mt-3" src="../assets/img/unnamed.jpg" alt="">
           </div>
           <div class="d-flex flex-column">
-            <h3 class="title">My Projects</h3>
-            <div>
-              <div class="d-flex">
-                <button @click="changeProjectInfo(0)" class="filter-btn">PcPals</button>
+            <div class="text-center">
+              <h3 class="title d-inline-block">My Projects</h3>
+            </div>
+            <div class="mt-2">
+              <div class="d-flex justify-content-end">
+                <button @click="changeProjectInfo(0)" class="filter-btn">In Development</button>
                 <button @click="changeProjectInfo(1)" class="filter-btn">KeeprCo</button>
                 <button @click="changeProjectInfo(2)" class="filter-btn">All Spice</button>
               </div>
               <div class="project-info pt-2 ps-1 pe-1">
-                <h4>{{ projectData.name }}</h4>
+                <div class="text-center">
+                  <h4 class="fst-italic">{{ projectData.name }}</h4>
+                </div>
+                <div>
+                  <h6>{{ projectData.info }}</h6>
+                </div>
+                <div>
+                  <a :href="projectData.link" target="_blank">Explore</a>
+                </div>
               </div>
             </div>
           </div>
@@ -85,10 +95,9 @@ async function changeProjectInfo(index){
 }
 
 .project-info{
-  border-left: solid 1px #ED7D31;
-  border-right: solid 1px #ED7D31;
-  border-bottom: solid 1px #ED7D31;
+  outline: solid 1px #ED7D31;
   background-color: #635d56;
+  width: 400px;
 }
 
 .filter-btn{
@@ -115,6 +124,7 @@ async function changeProjectInfo(index){
   border-top: solid 1px #ED7D31;
   border-right: solid 1px #ED7D31;
   border-left: solid 1px #ED7D31;
+  border-bottom: solid 2px white;
   padding-top: 6px;
   padding-bottom: 6px;
   padding-left: 20px;
