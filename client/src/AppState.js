@@ -37,7 +37,7 @@ export const AppState = reactive({
     },
     {
       type: "Personal",
-      infoOne: "Continue to learn as much as possible about software development",
+      infoOne: "Complete the video game I have been creating.",
       infoTwo: "Become a Mid to Senior Software Developer within 6 years.",
       infoThree: "Learn how to better train OpenAi."
     }
