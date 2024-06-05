@@ -95,9 +95,14 @@
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-4"></div>
-      <div class="col-4"></div>
+    <div class="row justify-content-center mt-4 info-container pt-4">
+      <div class="col-lg-3 col-11 text-center me-lg-4 order-1 order-lg-0 text-dark">
+        <h3 class="title-font d-inline-block">Education</h3>
+        <h5>Boise CodeWorks</h5>
+      </div>
+      <div class="col-lg-4 ms-lg-4 col-11 order-0 order-lg-1">
+        <img class="graduate-image" src="../assets/img/codeworksGraduate.jpg" alt="">
+      </div>
     </div>
   </section>
 </template>
@@ -153,6 +158,7 @@ async function changeGoalsInfo(index){
   max-width: 400px;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.24);
   border-left: solid 2px rgb(49, 215, 237);
+  border-top: solid 2px rgb(49, 215, 237);
 }
 }
 
@@ -172,6 +178,7 @@ async function changeGoalsInfo(index){
   max-width: 357px;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.24);
   border-left: solid 2px rgb(49, 215, 237);
+  border-top: solid 2px rgb(49, 215, 237);
 }
 }
 
@@ -188,6 +195,12 @@ async function changeGoalsInfo(index){
   color: white;
   
 }
+
+.graduate-image{
+  max-width: 600px;
+  max-height: 500px;
+}
+
 .image{
   max-height: 400px;
   max-width: 300px;
