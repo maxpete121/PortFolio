@@ -95,7 +95,7 @@
         </div>
       </div>
     </div>
-    <div class="row justify-content-center mt-4 info-container pt-4 pb-3">
+    <div class="row justify-content-center mt-4 info-container pt-4 pb-4">
       <div class="col-lg-3 col-11 text-center mt-2 me-lg-4 order-1 order-lg-0 text-dark">
         <h3 class="title-font d-inline-block">Education</h3>
         <h5 class="mt-2">Boise CodeWorks</h5>
@@ -111,7 +111,7 @@
         <img class="graduate-image" src="../assets/img/codeworksGraduate.jpg" alt="">
       </div>
     </div>
-    <div class="row mt-3 justify-content-center">
+    <div class="row mt-3 justify-content-center pt-3 pb-3">
       <div class="col-lg-3 col-11 text-center d-flex flex-column align-items-center">
         <h4>My Social Media</h4>
         <div class="d-flex social-section justify-content-center mt-3">
@@ -135,6 +135,14 @@
           </h5>
           <a class="ms-3" href="https://www.instagram.com/maxxpetersenn/">Explore</a>
         </div>
+      </div>
+    </div>
+    <div class="row justify-content-center mt-3 pt-4 info-container text-dark pb-3">
+      <div class="col-3">
+        <img class="img-fluid hobby-image" src="../assets/img/FamilyPic.jpg" alt="">
+      </div>
+      <div class="col-4 d-flex flex-column">
+        <h3>About me</h3>
       </div>
     </div>
   </section>
@@ -195,7 +203,14 @@ async function changeGoalsInfo(index){
   border-left: solid 2px rgb(49, 215, 237);
   border-top: solid 2px rgb(49, 215, 237);
 }
-
+.graduate-image{
+  max-width: 600px;
+  max-height: 500px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.26);
+}
+.hobby-image{
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.26);
+}
 }
 
 @media screen and (max-width: 576px) {
@@ -216,8 +231,14 @@ async function changeGoalsInfo(index){
   border-left: solid 2px rgb(49, 215, 237);
   border-top: solid 2px rgb(49, 215, 237);
 }
-
-
+.graduate-image{
+  max-width: 600px;
+  max-height: 500px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.26);
+}
+.hobby-image{
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.26);
+}
 }
 
 .social-section{
@@ -236,11 +257,6 @@ async function changeGoalsInfo(index){
   background-color: #4f4a453a;
   color: white;
   
-}
-
-.graduate-image{
-  max-width: 600px;
-  max-height: 500px;
 }
 
 .image{
