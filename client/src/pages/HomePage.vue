@@ -59,7 +59,7 @@
         </div>
       </div>
     </div>
-    <div class="row justify-content-center pt-4 mb-4">
+    <div class="row justify-content-center pt-4 mb-4 pb-4">
       <div class="col-12 col-lg-7">
         <div class="d-lg-flex justify-content-center">
           <div class="d-flex flex-column me-lg-4">
@@ -95,13 +95,46 @@
         </div>
       </div>
     </div>
-    <div class="row justify-content-center mt-4 info-container pt-4">
-      <div class="col-lg-3 col-11 text-center me-lg-4 order-1 order-lg-0 text-dark">
+    <div class="row justify-content-center mt-4 info-container pt-4 pb-3">
+      <div class="col-lg-3 col-11 text-center mt-2 me-lg-4 order-1 order-lg-0 text-dark">
         <h3 class="title-font d-inline-block">Education</h3>
-        <h5>Boise CodeWorks</h5>
+        <h5 class="mt-2">Boise CodeWorks</h5>
+        <h6 class="mt-2 ms-1">Graduated ✅</h6>
+        <h6 class="mt-2">10/2023 - 03/2024</h6>
+        <h5 class="mt-3">Highlights</h5>
+        <h6 class="mt-2">- Met all assignment deadlines and met all requirements.</h6>
+        <h6 class="mt-2">- Finished with 0 points taken off my final grade.</h6>
+        <h6 class="mt-2">- Completed and launched 2 fullstack applications</h6>
+        <h6 class="mt-2">- Completed over 500 hours of work on assigned and non-assigned coding projects.</h6>
       </div>
-      <div class="col-lg-4 ms-lg-4 col-11 order-0 order-lg-1">
+      <div class="col-lg-4 ms-lg-4 mt-2 text-center col-11 order-0 order-lg-1">
         <img class="graduate-image" src="../assets/img/codeworksGraduate.jpg" alt="">
+      </div>
+    </div>
+    <div class="row mt-3 justify-content-center">
+      <div class="col-lg-3 col-11 text-center d-flex flex-column align-items-center">
+        <h4>My Social Media</h4>
+        <div class="d-flex social-section justify-content-center mt-3">
+          <h5>Github</h5>
+          <h5>
+            <i class="mdi mdi-github ms-2"></i>
+          </h5>
+          <a class="ms-3" href="https://github.com/maxpete121">Explore</a>
+        </div>
+        <div class="d-flex social-section justify-content-center mt-3">
+          <h5>Facebook</h5>
+          <h5>
+            <i class="mdi mdi-facebook ms-2"></i>
+          </h5>
+          <a class="ms-3" href="https://www.facebook.com/max.petersen.7712/">Explore</a>
+        </div>
+        <div class="d-flex justify-content-center social-section mt-3">
+          <h5>Instagram</h5>
+          <h5>
+            <i class="mdi mdi-instagram ms-2"></i>
+          </h5>
+          <a class="ms-3" href="https://www.instagram.com/maxxpetersenn/">Explore</a>
+        </div>
       </div>
     </div>
   </section>
@@ -122,6 +155,8 @@ projectData.value = {}
 
 const goalsData = ref()
 goalsData.value = {}
+
+function scrollPage(){}
 
 function toggleTheme() {
   theme.value = theme.value == 'light' ? 'dark' : 'light'
@@ -160,6 +195,7 @@ async function changeGoalsInfo(index){
   border-left: solid 2px rgb(49, 215, 237);
   border-top: solid 2px rgb(49, 215, 237);
 }
+
 }
 
 @media screen and (max-width: 576px) {
@@ -180,8 +216,14 @@ async function changeGoalsInfo(index){
   border-left: solid 2px rgb(49, 215, 237);
   border-top: solid 2px rgb(49, 215, 237);
 }
+
+
 }
 
+.social-section{
+  border-bottom: solid 2px rgb(49, 215, 237);
+  width: 200px;
+}
 .title-font{
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   color: black;
