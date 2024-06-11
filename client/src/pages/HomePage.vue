@@ -17,7 +17,7 @@
             <h3 class="fst-italic title-font">Software Engineer</h3>
             <div class="d-flex p-1 justify-content-center mt-4">
               <button @click="openModal()" class="contact-btn">Contact Me</button>
-              <button class="project-btn">Projects <i class="mdi mdi-arrow-top-right-thick"></i></button>
+              <button @click="viewProjects()" class="project-btn">Projects <i class="mdi mdi-arrow-top-right-thick"></i></button>
             </div>
             <div class="p-1 mt-4">
               <h4 class="title-font ps-1 pe-1">Skills</h4>
@@ -61,7 +61,7 @@
     </div>
     <div class="row justify-content-center pt-4 mb-4 pb-4">
       <div class="col-12 col-lg-7">
-        <div class="d-lg-flex justify-content-center">
+        <div id="projectElement" class="d-lg-flex justify-content-center">
           <div class="d-flex flex-column me-lg-4">
             <div class="text-center">
               <h3 class="title d-inline-block title-font mt-3">My Projects</h3>
@@ -96,19 +96,23 @@
       </div>
     </div>
     <div class="row justify-content-center mt-4 info-container pt-4 pb-4">
-      <div class="col-lg-3 col-11 text-center mt-2 me-lg-4 order-1 order-lg-0 text-dark">
-        <h3 class="title-font d-inline-block">Education</h3>
-        <h5 class="mt-2">Boise CodeWorks</h5>
-        <h6 class="mt-2 ms-1">Graduated ✅</h6>
-        <h6 class="mt-2">10/2023 - 03/2024</h6>
-        <h5 class="mt-4">Highlights</h5>
-        <h6 class="mt-2">- Excelled in a fast paced learning environment.</h6>
-        <h6 class="mt-2">- Met all assignment deadlines and met all requirements for said assignments.</h6>
-        <h6 class="mt-2">- Finished with 0 points taken off my final grade.</h6>
-        <h6 class="mt-2">- Completed and launched 2 fullstack applications</h6>
-        <h6 class="mt-2">- Completed over 600 hours of work on assigned and non-assigned coding projects.</h6>
+      <div class="col-lg-3 col-11 d-flex flex-column align-items-center mt-2 me-lg-4 order-1 order-lg-0 text-dark">
+        <div class="general-info-section p-3 text-center">
+          <h3 class="title-font d-inline-block">Education</h3>
+          <h5 class="mt-2">Boise CodeWorks</h5>
+          <h6 class="mt-2 ms-1">Graduated ✅</h6>
+          <h6 class="mt-2 mb-2">10/2023 - 03/2024</h6>
+        </div>
+        <div class="general-info-section p-3 text-center mt-4">
+          <h4 class="title-font d-inline-block">Highlights</h4>
+          <h6 class="mt-2">- Excelled in a fast paced learning environment.</h6>
+          <h6 class="mt-2">- Met all assignment deadlines and met all requirements for said assignments.</h6>
+          <h6 class="mt-2">- Finished with 0 points taken off my final grade.</h6>
+          <h6 class="mt-2">- Completed and launched 2 fullstack applications</h6>
+          <h6 class="mt-2">- Completed over 600 hours of work on assigned and non-assigned coding projects.</h6>
+        </div>
       </div>
-      <div class="col-lg-4 ms-lg-4 mt-2 text-center col-11 order-0 order-lg-1">
+      <div class="col-lg-4 ms-lg-4 mt-2 d-flex justify-content-center col-11 order-0 order-lg-1">
         <img class="graduate-image" src="../assets/img/codeworksGraduate.jpg" alt="">
       </div>
     </div>
@@ -139,15 +143,17 @@
       </div>
     </div>
     <div class="row justify-content-center mt-3 pt-4 info-container text-dark pb-3">
-      <div class="col-3">
+      <div class="col-lg-3 col-11">
         <img class="img-fluid hobby-image" src="../assets/img/FamilyPic.jpg" alt="">
       </div>
-      <div class="col-4 d-flex flex-column align-items-center ps-2 pe-2">
-        <h3>About me</h3>
-        <h6>I am a hard-working and driven individual who is always excited to learn new things! I'm passionate about the work I take on and about the people around me.
-          Throughout my career I have always excelled working on a team, everyone coming together to achieve a common goal is a great experience to be a part of and has become
-          one of my favorite. Aside from learning, I enjoy hanging out with my family. 
-        </h6>
+      <div class="col-lg-3 col-11 ms-lg-4 d-flex flex-column align-items-center mt-lg-0 mt-3">
+        <div class="d-flex flex-column align-items-center general-info-section p-3">
+          <h3 class="title-font">About me</h3>
+          <h5 class="mt-2">I am a hard-working and driven individual who is always excited to learn new things! I'm passionate about the work I take on and the people around me.
+            Throughout my career I have always excelled working on a team, everyone coming together to achieve a common goal is a great experience to be a part of and has become
+            one of my favorite. Aside from learning, I enjoy hanging out with my family, going on walks, and video games. 
+          </h5>
+        </div>
       </div>
     </div>
     <ContactModal id="ContactModal"/>
@@ -188,7 +194,17 @@ async function changeProjectInfo(index){
   projectData.value = data
 }
 
-function viewProjects(){}
+function viewProjects(){
+  // window.scroll({
+  //   top: 290,
+  //   behavior: 'smooth'
+  // })
+  let element = document.getElementById('projectElement')
+  element.scrollIntoView({
+    behavior: 'smooth',
+    inline: 'start',
+  })
+}
 
 function openModal(){
   Modal.getOrCreateInstance('#ContactModal').show()
@@ -220,6 +236,12 @@ function closeModal(){
 .hobby-image{
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.26);
 }
+.general-info-section{
+  border-left: solid 2px rgb(49, 215, 237);
+  border-top: solid 2px rgb(49, 215, 237);
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.24);
+  background-color: white;
+}
 }
 
 @media screen and (max-width: 576px) {
@@ -247,6 +269,12 @@ function closeModal(){
 }
 .hobby-image{
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.26);
+}
+.general-info-section{
+  border-left: solid 2px rgb(49, 215, 237);
+  border-top: solid 2px rgb(49, 215, 237);
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.24);
+  background-color: white;
 }
 }
 

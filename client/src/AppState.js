@@ -23,23 +23,9 @@ export const AppState = reactive({
     {
       name: "All Spice",
       link: "https://allspice-d30a0e30877c.herokuapp.com/#/",
-      info: "An app that allows people to save and share recipes with others.",
+      info: "An app that allows people to create recipes and share them with others. Users can also save recipes for later or edit their current recipes they've created.",
       languages: "HTML, CSS, Javascript, C#, MYSQL"
     }
   ],
 
-  goals: [
-    {
-      type: "Career",
-      infoOne: "Continue to learn as much as possible about software development",
-      infoTwo: "Become a Mid to Senior Software Developer within 6 years.",
-      infoThree: "Learn how to better train OpenAi."
-    },
-    {
-      type: "Personal",
-      infoOne: "Complete the video game I have been creating.",
-      infoTwo: "Become a Mid to Senior Software Developer within 6 years.",
-      infoThree: "Learn how to better train OpenAi."
-    }
-  ]
 })
