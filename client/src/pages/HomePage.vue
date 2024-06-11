@@ -16,7 +16,7 @@
           <div class="ms-lg-4 mt-3 text-center about-parent">
             <h3 class="fst-italic title-font">Software Engineer</h3>
             <div class="d-flex p-1 justify-content-center mt-4">
-              <button class="contact-btn">Contact Me</button>
+              <button @click="openModal()" class="contact-btn">Contact Me</button>
               <button class="project-btn">Projects <i class="mdi mdi-arrow-top-right-thick"></i></button>
             </div>
             <div class="p-1 mt-4">
@@ -101,11 +101,12 @@
         <h5 class="mt-2">Boise CodeWorks</h5>
         <h6 class="mt-2 ms-1">Graduated ✅</h6>
         <h6 class="mt-2">10/2023 - 03/2024</h6>
-        <h5 class="mt-3">Highlights</h5>
-        <h6 class="mt-2">- Met all assignment deadlines and met all requirements.</h6>
+        <h5 class="mt-4">Highlights</h5>
+        <h6 class="mt-2">- Excelled in a fast paced learning environment.</h6>
+        <h6 class="mt-2">- Met all assignment deadlines and met all requirements for said assignments.</h6>
         <h6 class="mt-2">- Finished with 0 points taken off my final grade.</h6>
         <h6 class="mt-2">- Completed and launched 2 fullstack applications</h6>
-        <h6 class="mt-2">- Completed over 500 hours of work on assigned and non-assigned coding projects.</h6>
+        <h6 class="mt-2">- Completed over 600 hours of work on assigned and non-assigned coding projects.</h6>
       </div>
       <div class="col-lg-4 ms-lg-4 mt-2 text-center col-11 order-0 order-lg-1">
         <img class="graduate-image" src="../assets/img/codeworksGraduate.jpg" alt="">
@@ -141,16 +142,23 @@
       <div class="col-3">
         <img class="img-fluid hobby-image" src="../assets/img/FamilyPic.jpg" alt="">
       </div>
-      <div class="col-4 d-flex flex-column">
+      <div class="col-4 d-flex flex-column align-items-center ps-2 pe-2">
         <h3>About me</h3>
+        <h6>I am a hard-working and driven individual who is always excited to learn new things! I'm passionate about the work I take on and about the people around me.
+          Throughout my career I have always excelled working on a team, everyone coming together to achieve a common goal is a great experience to be a part of and has become
+          one of my favorite. Aside from learning, I enjoy hanging out with my family. 
+        </h6>
       </div>
     </div>
+    <ContactModal id="ContactModal"/>
   </section>
 </template>
 <script setup>
 import { computed, onMounted, ref } from 'vue';
 import { loadState, saveState } from '../utils/Store.js';
 import { AppState } from '../AppState';
+import ContactModal from '../components/ContactModal.vue'
+import { Modal } from 'bootstrap';
 const theme = ref(loadState('theme') || 'light')
 
 onMounted(() => {
@@ -180,12 +188,13 @@ async function changeProjectInfo(index){
   projectData.value = data
 }
 
-async function changeGoalsInfo(index){
-  if(index == null){
-    index = 0
-  }
-  let data = AppState.goals[index]
-  goalsData.value = data
+function viewProjects(){}
+
+function openModal(){
+  Modal.getOrCreateInstance('#ContactModal').show()
+}
+function closeModal(){
+  Modal.getOrCreateInstance('#ContactModal').hide()
 }
 
 </script>
