@@ -68,7 +68,7 @@
             </div>
             <div class="mt-2 d-flex flex-column align-items-center">
               <div class="d-flex justify-content-center">
-                <button @click="changeProjectInfo(0)" class="filter-btn">In Development</button>
+                <button @click="changeProjectInfo(0)" class="filter-btn">BoisePcPals</button>
                 <button @click="changeProjectInfo(1)" class="filter-btn">KeeprCo</button>
                 <button @click="changeProjectInfo(2)" class="filter-btn">All Spice</button>
               </div>
@@ -134,11 +134,11 @@
           <a class="ms-3" href="https://www.facebook.com/max.petersen.7712/">Explore</a>
         </div>
         <div class="d-flex justify-content-center social-section mt-3">
-          <h5>Instagram</h5>
+          <h5>Linkedin</h5>
           <h5>
             <i class="mdi mdi-instagram ms-2"></i>
           </h5>
-          <a class="ms-3" href="https://www.instagram.com/maxxpetersenn/">Explore</a>
+          <a class="ms-3" href="https://www.linkedin.com/in/max-petersen-146233282/">Explore</a>
         </div>
       </div>
     </div>

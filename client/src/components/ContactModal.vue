@@ -5,12 +5,7 @@ import { AuthService } from '../services/AuthService'
 
 const user = computed(() => AppState.user)
 const account = computed(() => AppState.account)
-async function login() {
-  AuthService.loginWithPopup()
-}
-async function logout() {
-  AuthService.logout({ returnTo: window.location.origin })
-}
+async function contact(){}
 
 </script>
 
@@ -24,7 +19,15 @@ async function logout() {
       </div>
       <div class="modal-body">
         <div class="w-100 d-flex flex-column align-items-center">
-            <form action="">
+          <div class="d-flex contact-box">
+            <h4 class="me-3">Phone:</h4>
+            <h4>(208)-871-8569</h4>
+          </div>
+          <div class="d-flex mt-3 contact-box">
+            <h4 class="me-3">Email:</h4>
+            <h4>maxpete121@gmail.com</h4>
+          </div>
+            <!-- <form action="">
                 <div class="d-flex flex-column">
                     <label for="Name">Name</label>
                     <input class="input-contact" name="Name" type="text" maxlength="60" required>
@@ -48,7 +51,7 @@ async function logout() {
                 <div class="text-center">
                     <button class="btn btn-outline-dark mt-3">Submit</button>
                 </div>
-            </form>
+            </form> -->
         </div>
       </div>
       <div class="modal-footer">
@@ -70,6 +73,10 @@ async function logout() {
     .input-contact{
         width: 250px;
     }
+}
+
+.contact-box{
+  border-bottom: solid 1px rgb(49, 215, 237);
 }
 
 </style>

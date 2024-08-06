@@ -10,7 +10,7 @@ export const AppState = reactive({
   projectInfo: [
     {
       name: "PcPals",
-      link: "https://github.com/maxpete121/PCpals",
+      link: "https://boisepcpals.com",
       info: "This application allows users to create and purchase their own PC builds! Users can save builds for later or share their own builds with others.",
       languages: "HTML, CSS, Javascript, C#, MYSQL"
     },
